@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "cleanupPeriodDays": 14,
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git checkout:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "Bash(gh pr:*)",
+      "Bash(gh auth status)",
+      "Bash(gh auth switch:*)",
+      "Bash(gh pr:*)",
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(pnpm run:*)",
+      "Bash(pnpm lint:*)",
+      "Bash(pnpm test:*)",
+      "Read",
+      "WebSearch",
+      "Fetch",
+      "Search",
+      "mcp__pencil"
+    ],
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(git rm:*)",
+      "Bash(/bin/rm)",
+      "Bash(sudo:*)",
+      "Bash(git config:*)",
+      "Bash(brew install:*)",
+      "Bash(chmod:*)",
+      "Bash(rm -rf /*)",
+      "Bash(gh repo delete:*)",
+      "Read(.env)",
+      "Bash(vercel env:*)"
+    ],
+    "ask": [
+      "Bash(cat:*)"
+    ],
+    "defaultMode": "plan"
+  },
+  "enableAllProjectMcpServers": true,
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Frog.aiff"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Bottle.aiff"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true
+  },
+  "outputStyle": "Explanatory",
+  "language": "japanese",
+  "companyAnnouncements": [
+    "おっす！おら Claude Code！"
+  ],
+  "skipDangerousModePermissionPrompt": true,
+  "disableBypassPermissionsMode": "disable",
+  "teammateMode": "split-panes"
+}

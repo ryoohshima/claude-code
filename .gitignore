@@ -1,0 +1,35 @@
+# 機密情報
+.credentials.json
+
+# セッション/ランタイムデータ
+history.jsonl
+debug/
+todos/
+shell-snapshots/
+file-history/
+paste-cache/
+session-env/
+plans/
+backups/
+
+# タスク/チーム管理
+tasks/
+teams/
+
+# キャッシュ/テレメトリ
+cache/
+telemetry/
+statsig/
+stats-cache.json
+
+# 外部ツール/プラグイン
+plugins/
+.kiri/
+ide/
+scripts/
+
+# プロジェクト別データ
+projects/
+
+# その他の自動生成ファイル
+security_warnings_state_*.json
