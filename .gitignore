@@ -20,7 +20,7 @@ teams/
 cache/
 telemetry/
 statsig/
-stats-cache.json
+*-cache.json
 
 # 外部ツール/プラグイン
 plugins/
