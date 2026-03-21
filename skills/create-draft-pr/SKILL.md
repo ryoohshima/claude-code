@@ -30,8 +30,9 @@ disable-model-invocation: true
 4. git ステータスを確認する。もしコミットされていないファイルが存在している場合は AskUserQuestion でファイルごとに commit するかユーザーに確認する
    - コミットする際には git-commit スキルを利用する
 
-5. 変更差分を元にタイトルを本文を考え、ドラフトPRを作成する
+5. 変更差分を元にタイトルを本文を考え、ドラフトPRを作成する。もしリポジトリ内にPRテンプレートがある場合はそれに沿って作成をする。
    - PR作成コマンド: `gh pr create --draft  --title "[title]"  --body "[description]"`
+   - テンプレート: `[リポジトリルート]/.github/PULL_REQUEST_TEMPLATE.md`
 
 6. PR 作成後に PR の URL を表示する
 
