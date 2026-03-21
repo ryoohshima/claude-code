@@ -16,6 +16,8 @@
       "Bash(git push:*)",
       "Bash(git pull:*)",
       "Bash(git stash:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
       "Bash(gh pr:*)",
       "Bash(gh auth status)",
       "Bash(gh auth switch:*)",
@@ -25,6 +27,7 @@
       "Bash(pnpm run:*)",
       "Bash(pnpm lint:*)",
       "Bash(pnpm test:*)",
+      "Bash(mkdir:*)",
       "Read",
       "WebSearch",
       "Fetch",
@@ -89,6 +92,7 @@
   "companyAnnouncements": [
     "おっす！おら Claude Code！"
   ],
+  "voiceEnabled": false,
   "skipDangerousModePermissionPrompt": true,
   "disableBypassPermissionsMode": "disable",
   "teammateMode": "split-panes"
