@@ -11,6 +11,7 @@ paste-cache/
 session-env/
 plans/
 backups/
+sessions/
 
 # タスク/チーム管理
 tasks/
