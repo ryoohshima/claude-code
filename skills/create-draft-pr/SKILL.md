@@ -1,7 +1,6 @@
 ---
 description: 実装差分を検知して commit から PR 作成までを一括実行するスキル
 allowed-tools: Bash(gh auth status), Bash(git remote:*), Bash(git status), Bash(git auth switch:*), Bash(git diff:*), Bash(git push -u origin:*), Bash(git log:*), Bash(gh pr:*), Bash(gh repo:*)
-disable-model-invocation: true
 ---
 
 ## Context
@@ -28,7 +27,8 @@ disable-model-invocation: true
    - master, main, develop
 
 4. git ステータスを確認する。もしコミットされていないファイルが存在している場合は AskUserQuestion でファイルごとに commit するかユーザーに確認する
-   - コミットする際には git-commit スキルを利用する
+   - コミットする際には Agent ツール（general-purpose）を使い、git-commit スキル（@~/.claude/skills/git-commit/SKILL.md）の手順に従って実行させる
+   - ※ Skill ツールではなく Agent ツールを使うこと（Skill ツールはセッションを終了させるため）
 
 5. すべてコミットしたら push する
    - push コマンド: `git push -u origin [branch name]`
