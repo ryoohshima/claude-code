@@ -1,7 +1,6 @@
 ---
 description: 実装差分を検知して commit から PR 作成までを一括実行するスキル
-allowed-tools: Bash(gh auth status), Bash(git remote:*), Bash(git status), Bash(git auth switch:*), Bash(git diff:*), Bash(git log:*), Bash(gh pr:*), Bash(gh repo:*)
-disable-model-invocation: true
+allowed-tools: Bash(gh auth status), Bash(git remote:*), Bash(git status), Bash(git auth switch:*), Bash(git diff:*), Bash(git push -u origin:*), Bash(git log:*), Bash(gh pr:*), Bash(gh repo:*)
 ---
 
 ## Context
@@ -28,13 +27,17 @@ disable-model-invocation: true
    - master, main, develop
 
 4. git ステータスを確認する。もしコミットされていないファイルが存在している場合は AskUserQuestion でファイルごとに commit するかユーザーに確認する
-   - コミットする際には git-commit スキルを利用する
+   - コミットする際には Agent ツール（general-purpose）を使い、git-commit スキル（@~/.claude/skills/git-commit/SKILL.md）の手順に従って実行させる
+   - ※ Skill ツールではなく Agent ツールを使うこと（Skill ツールはセッションを終了させるため）
 
-5. 変更差分を元にタイトルを本文を考え、ドラフトPRを作成する。もしリポジトリ内にPRテンプレートがある場合はそれに沿って作成をする。
+5. すべてコミットしたら push する
+   - push コマンド: `git push -u origin [branch name]`
+
+6. 変更差分を元にタイトルを本文を考え、ドラフトPRを作成する。もしリポジトリ内にPRテンプレートがある場合はそれに沿って作成をする。
    - PR作成コマンド: `gh pr create --draft  --title "[title]"  --body "[description]"`
    - テンプレート: `[リポジトリルート]/.github/PULL_REQUEST_TEMPLATE.md`
 
-6. PR 作成後に PR の URL を表示する
+7. PR 作成後に PR の URL を表示する
 
 ## User Input
 
