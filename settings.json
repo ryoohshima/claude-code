@@ -95,5 +95,6 @@
   "voiceEnabled": false,
   "skipDangerousModePermissionPrompt": true,
   "disableBypassPermissionsMode": "disable",
-  "teammateMode": "split-panes"
+  "teammateMode": "split-panes",
+  "model": "opusplan"
 }
