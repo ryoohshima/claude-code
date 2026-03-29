@@ -1,5 +1,5 @@
 ---
-description: 実装差分を検知して commit から PR 作成までを一括実行するスキル
+description: 実装差分を検知して PR 作成を実行するスキル
 allowed-tools: Bash(gh auth status), Bash(git remote:*), Bash(git status), Bash(git auth switch:*), Bash(git diff:*), Bash(git push -u origin:*), Bash(git log:*), Bash(gh pr:*), Bash(gh repo:*)
 ---
 
@@ -26,11 +26,9 @@ allowed-tools: Bash(gh auth status), Bash(git remote:*), Bash(git status), Bash(
 3. 現在のブランチを確認する。以下のブランチの場合は必ず別のブランチを作成する。ブランチ作成の際にはデフォルトブランチと現在のブランチの差分を元に規約に沿った適切な命名をする
    - master, main, develop
 
-4. git ステータスを確認する。もしコミットされていないファイルが存在している場合は AskUserQuestion でファイルごとに commit するかユーザーに確認する
-   - コミットする際には Agent ツール（general-purpose）を使い、git-commit スキル（@~/.claude/skills/git-commit/SKILL.md）の手順に従って実行させる
-   - ※ Skill ツールではなく Agent ツールを使うこと（Skill ツールはセッションを終了させるため）
+4. git ステータスを確認する。もしコミットされていないファイルが存在している場合は この Skills の終了と Skills: git-commit の利用をユーザーにレコメンドする
 
-5. すべてコミットしたら push する
+5. 必要な差分がすべて commit されていることを確認したら push する
    - push コマンド: `git push -u origin [branch name]`
 
 6. 変更差分を元にタイトルを本文を考え、ドラフトPRを作成する。もしリポジトリ内にPRテンプレートがある場合はそれに沿って作成をする。
