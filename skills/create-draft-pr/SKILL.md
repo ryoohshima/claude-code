@@ -9,7 +9,6 @@ allowed-tools: Bash(gh auth status), Bash(git remote:*), Bash(git status), Bash(
 - Git リポジトリの所有者: !`gh repo view --json owner -q .owner.login`
 - default branch: !`gh repo view --json defaultBranchRef -q .defaultBranchRef.name`
 - git ステータス: !`git status`
-- PR テンプレート: !`cat .github/PULL_REQUEST_TEMPLATE.md`
 
 ## Additional resources
 
