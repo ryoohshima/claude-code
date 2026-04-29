@@ -114,10 +114,11 @@
     "おっす！おら Claude Code！"
   ],
   "skipDangerousModePermissionPrompt": true,
+  "theme": "dark-ansi",
+  "preferredNotifChannel": "terminal_bell",
   "teammateMode": "auto",
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": false,
   "disableBypassPermissionsMode": "disable",
-  "theme": "dark-ansi",
-  "preferredNotifChannel": "terminal_bell"
+  "agentPushNotifEnabled": true
 }
