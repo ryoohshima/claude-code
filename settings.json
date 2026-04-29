@@ -52,6 +52,32 @@
   },
   "enableAllProjectMcpServers": true,
   "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "zsh $HOME/.claude/hooks/lessons-session-start.sh"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "zsh $HOME/.claude/hooks/lessons-user-prompt.sh"
+          },
+          {
+            "type": "command",
+            "command": "zsh $HOME/.claude/hooks/skill-forced-eval.sh"
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "matcher": "",
@@ -92,10 +118,11 @@
     "おっす！おら Claude Code！"
   ],
   "skipDangerousModePermissionPrompt": true,
+  "theme": "dark-ansi",
+  "preferredNotifChannel": "terminal_bell",
   "teammateMode": "auto",
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": false,
   "disableBypassPermissionsMode": "disable",
-  "theme": "dark-ansi",
-  "preferredNotifChannel": "terminal_bell"
+  "agentPushNotifEnabled": true
 }
