@@ -30,8 +30,6 @@
       "Bash(mkdir:*)",
       "Read",
       "WebSearch",
-      "Fetch",
-      "Search",
       "mcp__pencil"
     ],
     "deny": [
@@ -50,7 +48,7 @@
     "ask": [
       "Bash(cat:*)"
     ],
-    "defaultMode": "plan"
+    "defaultMode": "auto"
   },
   "enableAllProjectMcpServers": true,
   "hooks": {
@@ -63,6 +61,14 @@
             "command": "afplay /System/Library/Sounds/Frog.aiff"
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -n \"$SUPERSET_HOME_DIR\" ] && [ -x \"$SUPERSET_HOME_DIR/hooks/notify.sh\" ] && \"$SUPERSET_HOME_DIR/hooks/notify.sh\" || true"
+          }
+        ]
       }
     ],
     "Notification": [
@@ -72,6 +78,49 @@
           {
             "type": "command",
             "command": "afplay /System/Library/Sounds/Bottle.aiff"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -n \"$SUPERSET_HOME_DIR\" ] && [ -x \"$SUPERSET_HOME_DIR/hooks/notify.sh\" ] && \"$SUPERSET_HOME_DIR/hooks/notify.sh\" || true"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -n \"$SUPERSET_HOME_DIR\" ] && [ -x \"$SUPERSET_HOME_DIR/hooks/notify.sh\" ] && \"$SUPERSET_HOME_DIR/hooks/notify.sh\" || true"
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -n \"$SUPERSET_HOME_DIR\" ] && [ -x \"$SUPERSET_HOME_DIR/hooks/notify.sh\" ] && \"$SUPERSET_HOME_DIR/hooks/notify.sh\" || true"
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -n \"$SUPERSET_HOME_DIR\" ] && [ -x \"$SUPERSET_HOME_DIR/hooks/notify.sh\" ] && \"$SUPERSET_HOME_DIR/hooks/notify.sh\" || true"
           }
         ]
       }
@@ -89,11 +138,15 @@
   },
   "outputStyle": "Explanatory",
   "language": "japanese",
+  "effortLevel": "high",
   "companyAnnouncements": [
     "おっす！おら Claude Code！"
   ],
-  "voiceEnabled": false,
   "skipDangerousModePermissionPrompt": true,
+  "teammateMode": "auto",
+  "skipAutoPermissionPrompt": true,
+  "voiceEnabled": false,
   "disableBypassPermissionsMode": "disable",
-  "teammateMode": "split-panes"
+  "theme": "dark-ansi",
+  "preferredNotifChannel": "terminal_bell"
 }
