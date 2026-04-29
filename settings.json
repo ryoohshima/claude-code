@@ -52,6 +52,28 @@
   },
   "enableAllProjectMcpServers": true,
   "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "zsh $HOME/.claude/hooks/lessons-session-start.sh"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "zsh $HOME/.claude/hooks/lessons-user-prompt.sh"
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "matcher": "",
