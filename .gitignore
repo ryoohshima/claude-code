@@ -28,6 +28,7 @@ plugins/
 .kiri/
 ide/
 scripts/
+skills/skill-creator
 
 # プロジェクト別データ
 projects/
