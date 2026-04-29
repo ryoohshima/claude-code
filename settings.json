@@ -30,8 +30,6 @@
       "Bash(mkdir:*)",
       "Read",
       "WebSearch",
-      "Fetch",
-      "Search",
       "mcp__pencil"
     ],
     "deny": [
@@ -89,11 +87,15 @@
   },
   "outputStyle": "Explanatory",
   "language": "japanese",
+  "effortLevel": "high",
   "companyAnnouncements": [
     "おっす！おら Claude Code！"
   ],
-  "voiceEnabled": false,
   "skipDangerousModePermissionPrompt": true,
+  "teammateMode": "auto",
+  "skipAutoPermissionPrompt": true,
+  "voiceEnabled": false,
   "disableBypassPermissionsMode": "disable",
-  "teammateMode": "split-panes"
+  "theme": "dark-ansi",
+  "preferredNotifChannel": "terminal_bell"
 }
