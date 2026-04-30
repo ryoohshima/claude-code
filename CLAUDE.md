@@ -86,3 +86,4 @@ rules/ ディレクトリ内のガイドラインを参照する
 
 - coding-guideline.md
 - git-guidline.md
+- gemini-cli-guideline.md
