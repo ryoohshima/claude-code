@@ -1,6 +1,9 @@
 # 機密情報
 .credentials.json
 
+# ローカル設定（マシン固有・外部ツール由来。settings.json にマージ実行される）
+settings.local.json
+
 # セッション/ランタイムデータ
 history.jsonl
 debug/
