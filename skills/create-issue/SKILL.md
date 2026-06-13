@@ -12,7 +12,7 @@ model: haiku
 
 ## Additional resources
 
-- 本文テンプレートと記入例は [REFERENCE.md](REFERENCE.md) を参照してください
+- 本文テンプレートは [REFERENCE.md](REFERENCE.md) を参照してください
 - タイトルの prefix 規約は [git-guideline.md](@~/.claude/rules/git-guideline.md) を参照してください
 
 ## Task

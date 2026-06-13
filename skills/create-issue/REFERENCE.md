@@ -1,6 +1,6 @@
 # create-issue 本文リファレンス
 
-create-issue スキルが起票する issue 本文のテンプレートと記入例。SKILL.md の起草ステップから参照される。
+create-issue スキルが起票する issue 本文のテンプレート。SKILL.md の起草ステップから参照される。
 
 ## 本文テンプレート（単一・汎用）
 
@@ -22,35 +22,4 @@ create-issue スキルが起票する issue 本文のテンプレートと記入
 
 ## 補足 / Notes（任意）
 参考リンク・スクショ・代替案など
-```
-
-## 記入例
-
-入力（$ARGUMENTS）が「health gate を手動リセットする手段が欲しい」の一言だった場合の起草例：
-
-**タイトル:**
-```
-feat: health gate の手動リセット手段を追加
-```
-
-**本文:**
-```
-## 背景 / Why
-X API のクレジット枯渇でサーキットブレーカー(health.json)が trip した後、
-チャージ完了後に状態を戻す手段が workflow_dispatch の手動実行のみで分かりづらい。
-
-## 現状 / Current
-data/health.json が tripped のままだと cron が no-op を続ける。
-復帰には GitHub Actions の Run workflow から reset_health を手動指定する必要がある。
-
-## やりたいこと / What
-クレジット復旧後に health 状態を安全にリセットできる、分かりやすい導線を用意する。
-
-## 受け入れ基準 / Acceptance Criteria
-- [ ] tripped 状態を 1 アクションでリセットできる
-- [ ] リセット後の最初の cron で通常投稿が再開する
-- [ ] 誤操作で tripped 中に課金 API を叩かない
-
-## 補足 / Notes（任意）
-関連: tasks/lessons.md 2026-05-05 / 2026-05-10 のサーキットブレーカー経緯
 ```
