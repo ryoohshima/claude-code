@@ -32,6 +32,7 @@ plugins/
 ide/
 /scripts/
 skills/skill-creator
+skills/caveman
 
 # プロジェクト別データ
 projects/
