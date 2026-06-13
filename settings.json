@@ -21,7 +21,7 @@
       "Bash(gh pr:*)",
       "Bash(gh auth status)",
       "Bash(gh auth switch:*)",
-      "Bash(gh pr:*)",
+      "Bash(gh issue:*)",
       "Bash(ls:*)",
       "Bash(find:*)",
       "Bash(pnpm run:*)",

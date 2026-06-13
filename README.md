@@ -26,3 +26,29 @@ mv ~/.claude ~/.claude.bak
 ```
 
 なお、既に正しいリンクが張られている場合は、そのまま正常終了します（冪等）。
+
+## settings.json の管理について
+
+`settings.json` は Git 管理対象だが、Superset アプリの `agent-setup` が起動時に `~/.claude/settings.json` へ通知フック（`$SUPERSET_HOME_DIR/hooks/notify.sh` 系）を**自動マージ注入**する。この注入は出力先がハードコードされており、`settings.local.json` へ逃がす設定も注入を止めるトグルも存在しない。
+
+そのため、注入を Git から不可視化しつつ意図的な設定だけを追跡できるよう、`settings.json` には `skip-worktree` を設定している。
+
+```sh
+# 封印（初回のみ。注入をGitから不可視化）
+git update-index --skip-worktree settings.json
+```
+
+### settings.json を意図的に変更してコミットするとき
+
+`skip-worktree` 中はローカル変更が `git status` に出ないため、一時的に解除する。
+
+```sh
+git update-index --no-skip-worktree settings.json   # 1. 解除
+#    ここで意図する設定だけを残し、Superset 注入分は取り除いて編集する
+git add settings.json && git commit -m "chore: ..."  # 2. コミット
+git update-index --skip-worktree settings.json       # 3. 再封印
+```
+
+### マシン固有・ローカル専用の設定
+
+個人マシンだけで効かせたい設定は `settings.local.json`（gitignore 済み）に書く。Claude Code は hooks / permissions を全スコープでマージ実行するため、追跡対象の `settings.json` を汚さずに反映できる。

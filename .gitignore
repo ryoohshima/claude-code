@@ -1,6 +1,9 @@
 # 機密情報
 .credentials.json
 
+# ローカル設定（マシン固有・外部ツール由来。settings.json にマージ実行される）
+settings.local.json
+
 # セッション/ランタイムデータ
 history.jsonl
 debug/
@@ -27,10 +30,16 @@ statsig/
 plugins/
 .kiri/
 ide/
+/scripts/
 skills/skill-creator
+skills/caveman
 
 # プロジェクト別データ
 projects/
 
 # その他の自動生成ファイル
 security_warnings_state_*.json
+security/
+.DS_Store
+.last-cleanup
+.last-update-result.json
