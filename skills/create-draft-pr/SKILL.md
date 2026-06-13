@@ -1,6 +1,7 @@
 ---
 description: 実装差分を検知して PR 作成を実行するスキル
 allowed-tools: Bash(git remote:*), Bash(git status), Bash(git diff:*), Bash(git push -u origin:*), Bash(git log:*), Bash(gh pr:*), Bash(gh repo:*), Bash(bash:*)
+model: haiku
 ---
 
 ## Context

@@ -2,6 +2,7 @@
 name: create-issue
 description: GitHub のイシューを作成するスキル。会話・作業文脈やユーザーの簡潔な一言から、「背景→現状→やりたいこと→受け入れ基準」の単一テンプレートでイシュー本文を起草し、ドラフトを提示して承認を得てから gh issue create で起票する。「イシューを作って」「issue 化して」「これをチケットにして」「起票して」「バグを報告したい」「TODO を issue にまとめて」「issue 立てて」など、GitHub のイシュー/チケット/起票に関わる依頼では明示の指示が無くても必ずこのスキルを使うこと。なお本スキルは issue 専用であり、PR 作成は create-draft-pr、コミットは git-commit に委ねる（混同しないこと）。
 allowed-tools: Bash(git remote:*), Bash(git branch:*), Bash(gh repo view:*), Bash(gh issue create:*), Bash(gh issue list:*), Bash(gh label list:*)
+model: haiku
 ---
 
 ## Context

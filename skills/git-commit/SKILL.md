@@ -2,6 +2,7 @@
 name: git-commit
 allowed-tools: Bash(git branch:*), Bash(git status:*), Bash(git log:*), Bash(git diff:*), Bash(git add:*), Bash(git commit:*)
 description: 変更をチェックして内容ごとに細かくコミットする
+model: haiku
 ---
 
 ## コンテキスト
