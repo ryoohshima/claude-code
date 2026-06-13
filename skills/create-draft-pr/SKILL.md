@@ -6,8 +6,7 @@ model: haiku
 
 ## Context
 
-- デフォルトブランチ: !`bash ${CLAUDE_SKILL_DIR}/scripts/check-context.sh`
-- git ステータス: !`git status`
+- 収集情報（デフォルトブランチ・git ステータス・PR テンプレート有無と本文）: !`bash ${CLAUDE_SKILL_DIR}/scripts/check-context.sh`
 
 ## Additional resources
 
@@ -27,11 +26,15 @@ model: haiku
 4. 必要な差分がすべて commit されていることを確認したら push する
    - push コマンド: `git push -u origin [branch name]`
 
-5. 変更差分を元にタイトルを本文を考え、ドラフトPRを作成する。もしリポジトリ内にPRテンプレートがある場合はそれに沿って作成をする。
-   - PR作成コマンド: `gh pr create --draft  --title "[title]"  --body "[description]"`
-   - テンプレート: `[リポジトリルート]/.github/PULL_REQUEST_TEMPLATE.md`
+5. PR テンプレートの有無を確認する
+   - 収集情報の「PR テンプレート」を参照する（`.github/PULL_REQUEST_TEMPLATE.md` 等）
+   - 「あり」の場合は同梱されたテンプレート本文の構造に沿って本文を組み立てる
+   - 「なし」の場合は変更差分から本文を構成する
 
-6. PR 作成後に PR の URL を表示する
+6. 変更差分とテンプレート方針を元にタイトルと本文を考え、ドラフト PR を作成する
+   - PR作成コマンド: `gh pr create --draft  --title "[title]"  --body "[description]"`
+
+7. PR 作成後に PR の URL を表示する
 
 ## User Input
 
