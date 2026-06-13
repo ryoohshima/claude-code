@@ -1,13 +1,11 @@
 ---
 description: 実装差分を検知して PR 作成を実行するスキル
-allowed-tools: Bash(gh auth status), Bash(git remote:*), Bash(git status), Bash(git auth switch:*), Bash(git diff:*), Bash(git push -u origin:*), Bash(git log:*), Bash(gh pr:*), Bash(gh repo:*)
+allowed-tools: Bash(gh auth status), Bash(gh auth switch:*), Bash(git remote:*), Bash(git status), Bash(git diff:*), Bash(git push -u origin:*), Bash(git log:*), Bash(gh pr:*), Bash(gh repo:*), Bash(bash:*)
 ---
 
 ## Context
 
-- Git のアクティブアカウント: !`gh auth status`
-- Git リポジトリの所有者: !`gh repo view --json owner -q .owner.login`
-- default branch: !`gh repo view --json defaultBranchRef -q .defaultBranchRef.name`
+- 収集情報（アクティブアカウント・所有者・デフォルトブランチ）: !`bash ${CLAUDE_SKILL_DIR}/scripts/check-context.sh`
 - git ステータス: !`git status`
 
 ## Additional resources
@@ -17,7 +15,9 @@ allowed-tools: Bash(gh auth status), Bash(git remote:*), Bash(git status), Bash(
 ## Task
 
 1. Git のアクティブアカウントとリポジトリの所有者を確認し、もし異なるようであればアクティブアカウントをリポジトリの所有者に変更する
-   - 変更コマンド: `gh auth switch --user [username]`
+   - 所有者は remote URL から導出した値（アカウント権限に依存せず確定する）
+   - 変更コマンド: `gh auth switch --user [owner]`
+   - 所有者が「導出不可 / remote 未設定」と表示された場合のみ切替をスキップし、push/PR は実行できない旨をユーザーに伝えて判断を仰ぐ
 
 2. デフォルトブランチと現在のブランチの変更差分を確認する
    - 確認コマンド: `git diff [default branch]...`
