@@ -27,7 +27,7 @@ statsig/
 plugins/
 .kiri/
 ide/
-scripts/
+/scripts/
 skills/skill-creator
 
 # プロジェクト別データ
@@ -35,3 +35,7 @@ projects/
 
 # その他の自動生成ファイル
 security_warnings_state_*.json
+security/
+.DS_Store
+.last-cleanup
+.last-update-result.json
