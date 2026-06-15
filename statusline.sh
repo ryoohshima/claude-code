@@ -14,7 +14,15 @@ if git rev-parse --git-dir > /dev/null 2>&1; then
     fi
 fi
 
-echo -n "📁 ${CURRENT_DIR##*/}$GIT_BRANCH"
+# 使用中のモデルと effort（推論努力レベル）を表示する。バージョンを含む model.id を
+# そのまま表示する。effort はモデルが非対応の場合 JSON に含まれないため、その時は付与しない。
+MODEL=$(echo "$input" | jq -r '.model.id // empty')
+EFFORT=$(echo "$input" | jq -r '.effort.level // empty')
+
+MODEL_INFO=""
+[ -n "$MODEL" ] && MODEL_INFO=" | 🤖 $MODEL${EFFORT:+ ($EFFORT)}"
+
+echo -n "📁 ${CURRENT_DIR##*/}$GIT_BRANCH$MODEL_INFO"
 
 # used_percentage(0〜100) を 10 セルのバーゲージに変換する
 make_bar() {
@@ -31,11 +39,7 @@ make_bar() {
 
 # 利用枠（rate limit）の使用率を表示する。Pro/Max かつ初回 API 応答後のみ JSON に含まれる。
 FIVE_HOUR=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // empty')
-SEVEN_DAY=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty')
 
 if [ -n "$FIVE_HOUR" ]; then
     printf '\n📊 5h [%s] %s%%' "$(make_bar "$FIVE_HOUR")" "$(printf '%.0f' "$FIVE_HOUR")"
-fi
-if [ -n "$SEVEN_DAY" ]; then
-    printf '\n📊 7d [%s] %s%%' "$(make_bar "$SEVEN_DAY")" "$(printf '%.0f' "$SEVEN_DAY")"
 fi
