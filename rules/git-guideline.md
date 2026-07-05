@@ -45,3 +45,4 @@
 
 - `.github/PULL_REQUEST_TEMPLATE.md` がある場合は必ず使用
 - 日本語で記述
+- base ブランチはリポジトリの運用に従う。develop 運用のリポジトリでは main へ直接 PR を出さない（develop→main はリリース同期のみ）
