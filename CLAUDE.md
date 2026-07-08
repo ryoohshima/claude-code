@@ -108,3 +108,14 @@
 - `coding-guideline.md`: コードを新規作成・編集するとき。命名規則、コメント方針、テスト実行、機密情報の扱いなどコード品質に関わる判断の拠り所として参照する。
 - `git-guideline.md`: コミット作成、ブランチ作成、プルリクエスト作成を行うとき。コミットメッセージのプレフィックス、ブランチ命名規則、PR テンプレートの利用方針を確認する。
 - `gemini-cli-guideline.md`: Gemini CLI を Claude Code から併用するか判断するとき。発火条件（呼ぶべき・呼ばない場面）、標準呼び出しテンプレート、結果の取り扱い方針を確認する。
+
+<!-- CODEGRAPH_START -->
+## CodeGraph
+
+In repositories indexed by CodeGraph (a `.codegraph/` directory exists at the repo root), reach for it BEFORE grep/find or reading files when you need to understand or locate code:
+
+- **MCP tool** (when available): `codegraph_explore` answers most code questions in one call — the relevant symbols' verbatim source plus the call paths between them, including dynamic-dispatch hops grep can't follow. Name a file or symbol in the query to read its current line-numbered source. If it's listed but deferred, load it by name via tool search.
+- **Shell** (always works): `codegraph explore "<symbol names or question>"` prints the same output.
+
+If there is no `.codegraph/` directory, skip CodeGraph entirely — indexing is the user's decision.
+<!-- CODEGRAPH_END -->

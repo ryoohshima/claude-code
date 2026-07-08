@@ -33,6 +33,7 @@ ide/
 /scripts/
 skills/skill-creator
 skills/caveman
+.superset/
 
 # プロジェクト別データ
 projects/
