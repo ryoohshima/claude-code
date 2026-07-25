@@ -101,14 +101,6 @@
 - 現状に関わらず、定義された手順を省略しない
 - 手順を省略すべき状況だと判断した場合は、先にユーザーに確認する
 
-## その他ガイドライン
-
-`rules/` ディレクトリ内のガイドラインは、用途に応じて参照する。
-
-- `coding-guideline.md`: コードを新規作成・編集するとき。命名規則、コメント方針、テスト実行、機密情報の扱いなどコード品質に関わる判断の拠り所として参照する。
-- `git-guideline.md`: コミット作成、ブランチ作成、プルリクエスト作成を行うとき。コミットメッセージのプレフィックス、ブランチ命名規則、PR テンプレートの利用方針を確認する。
-- `gemini-cli-guideline.md`: Gemini CLI を Claude Code から併用するか判断するとき。発火条件（呼ぶべき・呼ばない場面）、標準呼び出しテンプレート、結果の取り扱い方針を確認する。
-
 <!-- CODEGRAPH_START -->
 ## CodeGraph
 
@@ -119,3 +111,5 @@ In repositories indexed by CodeGraph (a `.codegraph/` directory exists at the re
 
 If there is no `.codegraph/` directory, skip CodeGraph entirely — indexing is the user's decision.
 <!-- CODEGRAPH_END -->
+
+@RTK.md
