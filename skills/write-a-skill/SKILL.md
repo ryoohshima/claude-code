@@ -1,6 +1,6 @@
 ---
 name: write-a-skill
-description: 新しい Claude Code スキル（SKILL.md ＋補助ファイル）を雛形から対話で起草・生成するスキル。Use when ユーザーが新規スキルを作りたいとき、または繰り返す手順・チェックリストをスキル化したいとき。トリガー語は「スキルを作って」「skill を作りたい」「skill 化して」「この手順をスキルにして」「/write-a-skill」。本スキルは新規スキルの作成専用であり、issue 起票は create-issue、PR 作成は create-draft-pr、コミットは git-commit に委ねる（混同しないこと）。
+description: 新しい Claude Code スキル（SKILL.md ＋補助ファイル）を雛形から対話で起草・生成するスキル。Use when ユーザーが新規スキルを作りたいとき、または繰り返す手順・チェックリストをスキル化したいとき。
 allowed-tools: Bash(bash:*), Read, Write
 ---
 
