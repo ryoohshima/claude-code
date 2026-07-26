@@ -52,7 +52,6 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "sonnet",
   "enableAllProjectMcpServers": true,
   "hooks": {
     "Notification": [
