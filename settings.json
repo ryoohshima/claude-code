@@ -32,7 +32,8 @@
       "Read",
       "WebSearch",
       "mcp__codegraph__*",
-      "mcp__pencil__*"
+      "mcp__pencil__*",
+      "mcp__pencil"
     ],
     "deny": [
       "Bash(rm:*)",
