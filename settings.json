@@ -32,7 +32,8 @@
       "Read",
       "WebSearch",
       "mcp__codegraph__*",
-      "mcp__pencil__*"
+      "mcp__pencil__*",
+      "mcp__pencil"
     ],
     "deny": [
       "Bash(rm:*)",
@@ -105,10 +106,6 @@
           {
             "type": "command",
             "command": "zsh $HOME/.claude/hooks/lessons-user-prompt.sh"
-          },
-          {
-            "type": "command",
-            "command": "zsh $HOME/.claude/hooks/skill-forced-eval.sh"
           }
         ]
       },
@@ -144,7 +141,8 @@
     "frontend-design@claude-plugins-official": false,
     "security-guidance@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": false,
-    "claude-security@claude-plugins-official": true
+    "claude-security@claude-plugins-official": true,
+    "ponytail@ponytail": true
   },
   "extraKnownMarketplaces": {
     "anthropic-agent-skills": {
@@ -157,6 +155,12 @@
       "source": {
         "source": "github",
         "repo": "ChromeDevTools/chrome-devtools-mcp"
+      }
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
       }
     }
   },
