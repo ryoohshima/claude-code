@@ -28,6 +28,7 @@ statsig/
 
 # 外部ツール/プラグイン
 plugins/
+.ponytail-active
 .kiri/
 ide/
 /scripts/
