@@ -32,7 +32,6 @@ plugins/
 .kiri/
 ide/
 /scripts/
-.superset/
 
 # プロジェクト別データ
 projects/
