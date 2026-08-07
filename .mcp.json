@@ -17,6 +17,11 @@
       "args": ["--app", "desktop"],
       "env": {},
       "type": "stdio"
+    },
+    "agenttakt": {
+      "command": "uvx",
+      "args": ["agenttakt", "serve"],
+      "timeout": 1800000
     }
   }
 }
