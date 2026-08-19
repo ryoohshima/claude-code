@@ -1,0 +1,50 @@
+{
+  "mcpServers": {
+    "agenttakt": {
+      "command": "uvx",
+      "args": [
+        "agenttakt",
+        "serve"
+      ],
+      "timeout": 1800000
+    },
+    "codegraph": {
+      "type": "stdio",
+      "command": "codegraph",
+      "args": [
+        "serve",
+        "--mcp"
+      ]
+    },
+    "context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "deepwiki": {
+      "type": "http",
+      "url": "https://mcp.deepwiki.com/mcp"
+    },
+    "next-devtools": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "next-devtools-mcp@latest"
+      ]
+    },
+    "notion": {
+      "type": "http",
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "pencil": {
+      "command": "/Applications/Pen.app/Contents/Resources/app.asar.unpacked/out/mcp-server-darwin-arm64",
+      "args": [
+        "--app",
+        "desktop",
+        "--agent",
+        "claudeCodeCLI"
+      ],
+      "env": {},
+      "type": "stdio"
+    }
+  }
+}
