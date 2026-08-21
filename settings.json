@@ -27,7 +27,6 @@
       "Bash(ls:*)",
       "Bash(mkdir:*)",
       "Bash(pnpm lint:*)",
-      "Bash(pnpm run:*)",
       "Bash(pnpm test:*)",
       "Read",
       "WebSearch",
@@ -53,7 +52,6 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "fable",
   "enableAllProjectMcpServers": true,
   "hooks": {
     "Notification": [
@@ -164,7 +162,7 @@
       }
     }
   },
-  "outputStyle": "Explanatory",
+  "outputStyle": "Concise",
   "language": "japanese",
   "effortLevel": "high",
   "advisorModel": "fable",
@@ -179,5 +177,6 @@
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": false,
-  "disableBypassPermissionsMode": "disable"
+  "disableBypassPermissionsMode": "disable",
+  "model": "opus"
 }
